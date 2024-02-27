@@ -1,4 +1,4 @@
-import { CreateAuthorUseCase } from '@/application/CreateAuthorUseCase';
+import { CreateAuthorUseCase } from '@/core/usecases/CreateAuthorUseCase';
 import { Elysia, t } from 'elysia';
 
 export function CreateAuthorController(useCase: CreateAuthorUseCase) {

@@ -1,4 +1,4 @@
-import { GetAllAuthorsUseCase } from '@/application/GetAllAuthorsUseCase';
+import { GetAllAuthorsUseCase } from '@/core/usecases/GetAllAuthorsUseCase';
 import { Elysia } from 'elysia';
 
 export function GetAllAuthorsController(useCase: GetAllAuthorsUseCase) {
