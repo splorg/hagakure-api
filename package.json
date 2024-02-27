@@ -1,0 +1,33 @@
+{
+  "name": "hagakure-api",
+  "version": "1.0.50",
+  "scripts": {
+    "dev": "bun run --watch src/infra/http/index.ts",
+    "lint:fix": "bunx biome check --apply-unsafe ./src",
+    "db:up": "docker compose up -d",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@commitlint/cli": "^18.6.1",
+    "@commitlint/config-conventional": "^18.6.2",
+    "bun-types": "latest",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "bunx biome check --apply-unsafe ./src",
+    "**/*": "bunx biome format ./src --write --files-ignore-unknown=true"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "bunx lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && bunx cz --hook || true"
+    }
+  },
+  "module": "src/infra/http/index.js"
+}
