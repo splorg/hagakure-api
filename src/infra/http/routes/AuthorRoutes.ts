@@ -1,3 +1,4 @@
+import { DateType } from '@/infra/http/plugins/DateType';
 import { createAuthor, getAllAuthors } from '@/infra/http/provider';
 import { CreateAuthorController } from '@/presentation/controllers/CreateAuthorController';
 import { GetAllAuthorsController } from '@/presentation/controllers/GetAllAuthorsController';
@@ -36,6 +37,8 @@ export const AuthorRoutes = new Elysia({ prefix: '/authors' })
 			body: t.Object({
 				name: t.String(),
 				bio: t.String(),
+				dateOfBirth: DateType,
+				dateOfDeath: t.Optional(DateType),
 			}),
 		},
 	);

@@ -5,8 +5,8 @@ import { IUseCase } from '@/core/interfaces/IUseCase';
 export type CreateAuthorDTO = {
 	name: string;
 	bio: string;
-	dateOfBirth?: Date;
-	dateOfDeath?: Date;
+	dateOfBirth: string;
+	dateOfDeath?: string;
 };
 
 export type CreateAuthorResult = Author;
@@ -20,8 +20,8 @@ export class CreateAuthorUseCase
 		const author = new Author(
 			input.name,
 			input.bio,
-			input.dateOfBirth ?? new Date(),
-			input.dateOfDeath || null,
+			new Date(input.dateOfBirth),
+			input.dateOfDeath ? new Date(input.dateOfDeath) : null,
 		);
 
 		const result = await this.repository.save(author);

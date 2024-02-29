@@ -8,8 +8,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "elysia": "latest",
-    "zod": "^3.22.4"
+    "elysia": "latest"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
