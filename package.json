@@ -2,13 +2,14 @@
   "name": "hagakure-api",
   "version": "1.0.50",
   "scripts": {
-    "dev": "bun run --watch src/infra/http/index.ts",
+    "dev": "bun run --watch src/main.ts",
     "lint:fix": "bunx biome check --apply-unsafe ./src",
     "db:up": "docker compose up -d",
     "prepare": "husky"
   },
   "dependencies": {
-    "elysia": "latest"
+    "elysia": "latest",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
@@ -29,5 +30,5 @@
       "prepare-commit-msg": "exec < /dev/tty && bunx cz --hook || true"
     }
   },
-  "module": "src/infra/http/index.js"
+  "module": "src/main.js"
 }

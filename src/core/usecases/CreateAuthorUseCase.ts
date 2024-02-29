@@ -1,6 +1,6 @@
 import { Author } from '@/core/entities/Author';
-import { IAuthorRepository } from '@/infra/interfaces/IAuthorRepository';
-import { IUseCase } from './interfaces/IUseCase';
+import { IAuthorRepository } from '@/core/interfaces/IAuthorRepository';
+import { IUseCase } from '@/core/interfaces/IUseCase';
 
 export type CreateAuthorDTO = {
 	name: string;

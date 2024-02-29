@@ -1,5 +1,5 @@
 import { Author } from '@/core/entities/Author';
-import { IAuthorRepository } from '../interfaces/IAuthorRepository';
+import { IAuthorRepository } from '@/core/interfaces/IAuthorRepository';
 
 export class InMemoryAuthorRepository implements IAuthorRepository {
 	private readonly authors: Author[] = [];

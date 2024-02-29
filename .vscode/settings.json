@@ -3,7 +3,7 @@
     "core": "rules",
     "usecases": "class",
     "entities": "resource",
-    "adapters": "pipe",
+    "presentation": "pipe",
     "infra": "tools",
     "database": "project",
     "http": "public",
