@@ -23,6 +23,11 @@ This is the backend for Hagakure, a project in development.
   ```bash
   bun run db:up
 
+  bun run db:stop
+  ```
+  To completely remove the container, you can run the following command:
+
+  ```bash
   bun run db:down
   ```
 
