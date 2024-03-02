@@ -5,7 +5,11 @@ import { IUseCase } from '@/core/interfaces/IUseCase';
 export class GetAllAuthorsUseCase implements IUseCase<void, Author[]> {
 	constructor(private readonly repository: IAuthorRepository) {}
 
-	execute(): Promise<Author[]> {
-		return this.repository.getAll();
+	async execute(): Promise<Author[]> {
+		const result = await this.repository.getAll();
+
+		return result.map(
+			a => new Author(a.name, a.bio, a.dateOfBirth, a.dateOfDeath, a.id),
+		);
 	}
 }

@@ -8,11 +8,7 @@ export class DrizzlePgAuthorRepository implements IAuthorRepository {
 	constructor(private readonly db: Database) {}
 
 	async getAll(): Promise<Author[]> {
-		const result = await this.db.select().from(authors);
-
-		return result.map(
-			a => new Author(a.name, a.bio, a.dateOfBirth, a.dateOfDeath, a.id),
-		);
+		return this.db.select().from(authors);
 	}
 
 	async find(id: string): Promise<Author | null> {
@@ -28,13 +24,7 @@ export class DrizzlePgAuthorRepository implements IAuthorRepository {
 
 		const foundAuthor = result[0];
 
-		return new Author(
-			foundAuthor.name,
-			foundAuthor.bio,
-			foundAuthor.dateOfBirth,
-			foundAuthor.dateOfDeath,
-			foundAuthor.id,
-		);
+		return foundAuthor;
 	}
 
 	async save(author: Author): Promise<boolean> {
