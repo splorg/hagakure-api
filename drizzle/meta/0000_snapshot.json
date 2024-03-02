@@ -1,0 +1,75 @@
+{
+	"id": "1ea20ce8-cdd9-4869-a31a-3ab60d712683",
+	"prevId": "00000000-0000-0000-0000-000000000000",
+	"version": "5",
+	"dialect": "pg",
+	"tables": {
+		"authors": {
+			"name": "authors",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true
+				},
+				"name": {
+					"name": "name",
+					"type": "varchar(265)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"bio": {
+					"name": "bio",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"date_of_birth": {
+					"name": "date_of_birth",
+					"type": "date",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"date_of_death": {
+					"name": "date_of_death",
+					"type": "date",
+					"primaryKey": false,
+					"notNull": false
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				},
+				"updated_at": {
+					"name": "updated_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {
+				"author_name_idx": {
+					"name": "author_name_idx",
+					"columns": ["name"],
+					"isUnique": true
+				}
+			},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"_meta": {
+		"columns": {},
+		"schemas": {},
+		"tables": {}
+	}
+}

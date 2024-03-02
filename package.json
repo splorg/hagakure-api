@@ -4,18 +4,26 @@
   "scripts": {
     "dev": "bun run --watch src/main.ts",
     "lint:fix": "bunx biome check --apply-unsafe ./src",
+    "db:generate": "bunx drizzle-kit generate:pg",
+    "db:migrate": "bun run src/infra/database/drizzle/migrate.ts",
     "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
     "prepare": "husky"
   },
   "dependencies": {
-    "elysia": "latest"
+    "drizzle-orm": "^0.29.4",
+    "elysia": "latest",
+    "pg": "^8.11.3",
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
+    "@types/pg": "^8.11.2",
     "bun-types": "latest",
     "cz-conventional-changelog": "^3.3.0",
+    "drizzle-kit": "^0.20.14",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2"
   },
