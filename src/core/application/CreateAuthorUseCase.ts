@@ -1,4 +1,4 @@
-import { Author } from '@/core/entities/Author';
+import { Author } from '@/core/domain/Author';
 import { IAuthorRepository } from '@/core/interfaces/IAuthorRepository';
 import { IUseCase } from '@/core/interfaces/IUseCase';
 

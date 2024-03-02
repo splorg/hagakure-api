@@ -1,4 +1,4 @@
-import { Author } from '@/core/entities/Author';
+import { Author } from '@/core/domain/Author';
 
 export interface IAuthorRepository {
 	getAll(): Promise<Author[]>;

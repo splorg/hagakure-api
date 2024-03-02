@@ -1,8 +1,8 @@
 {
   "material-icon-theme.folders.associations": {
     "core": "rules",
-    "usecases": "class",
-    "entities": "resource",
+    "application": "class",
+    "domain": "resource",
     "presentation": "pipe",
     "infra": "tools",
     "database": "project",

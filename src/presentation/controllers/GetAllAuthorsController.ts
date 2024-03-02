@@ -1,5 +1,5 @@
-import { Author } from '@/core/entities/Author';
-import { GetAllAuthorsUseCase } from '@/core/usecases/GetAllAuthorsUseCase';
+import { GetAllAuthorsUseCase } from '@/core/application/GetAllAuthorsUseCase';
+import { Author } from '@/core/domain/Author';
 import { HttpRequest } from '@/presentation/interfaces/HttpRequest';
 import { HttpResponse } from '@/presentation/interfaces/HttpResponse';
 import { IController } from '@/presentation/interfaces/IController';
