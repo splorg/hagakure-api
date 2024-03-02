@@ -72,9 +72,9 @@ This is the backend for Hagakure, a project in development.
 
   This project implements a few concepts from Clean Architecture (or at least attempts to), represented through this image:
 
-  <center>
+  <p align="center">
     <img src="./docs/ca-diagram.png" width="400">
-  </center>
+  </p>
 
   <br>
 
