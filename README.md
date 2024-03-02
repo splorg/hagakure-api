@@ -93,7 +93,7 @@ This is the backend for Hagakure, a project in development.
   <br>
 
   This application is built using:
-  - [Bun]((https://bun.sh/)) (runtime)
+  - [Bun](https://bun.sh/) (runtime)
   - [ElysiaJS](https://elysiajs.com/) (API framework)
   - [Drizzle](https://orm.drizzle.team/) (ORM)
   - [TypeScript](https://www.typescriptlang.org/) (type-checking)
