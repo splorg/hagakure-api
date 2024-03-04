@@ -1,7 +1,7 @@
 import { DateType } from '@/infra/http/plugins/DateType';
 import { createAuthor, getAllAuthors } from '@/infra/http/provider';
-import { CreateAuthorController } from '@/presentation/controllers/CreateAuthorController';
-import { GetAllAuthorsController } from '@/presentation/controllers/GetAllAuthorsController';
+import { CreateAuthorController } from '@/presentation/controllers/author/CreateAuthorController';
+import { GetAllAuthorsController } from '@/presentation/controllers/author/GetAllAuthorsController';
 import { Elysia, t } from 'elysia';
 
 export const AuthorRoutes = new Elysia({ prefix: '/authors' })

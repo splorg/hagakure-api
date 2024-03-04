@@ -1,0 +1,127 @@
+{
+	"id": "0961873d-14f4-4712-8615-ade8e678c52b",
+	"prevId": "1ea20ce8-cdd9-4869-a31a-3ab60d712683",
+	"version": "5",
+	"dialect": "pg",
+	"tables": {
+		"authors": {
+			"name": "authors",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true
+				},
+				"name": {
+					"name": "name",
+					"type": "varchar(265)",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"bio": {
+					"name": "bio",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"date_of_birth": {
+					"name": "date_of_birth",
+					"type": "date",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"date_of_death": {
+					"name": "date_of_death",
+					"type": "date",
+					"primaryKey": false,
+					"notNull": false
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				},
+				"updated_at": {
+					"name": "updated_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {
+				"author_name_idx": {
+					"name": "author_name_idx",
+					"columns": ["name"],
+					"isUnique": true
+				}
+			},
+			"foreignKeys": {},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		},
+		"quotes": {
+			"name": "quotes",
+			"schema": "",
+			"columns": {
+				"id": {
+					"name": "id",
+					"type": "uuid",
+					"primaryKey": true,
+					"notNull": true
+				},
+				"text": {
+					"name": "text",
+					"type": "text",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"author_id": {
+					"name": "author_id",
+					"type": "uuid",
+					"primaryKey": false,
+					"notNull": true
+				},
+				"created_at": {
+					"name": "created_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				},
+				"updated_at": {
+					"name": "updated_at",
+					"type": "timestamp",
+					"primaryKey": false,
+					"notNull": true,
+					"default": "now()"
+				}
+			},
+			"indexes": {},
+			"foreignKeys": {
+				"quotes_author_id_authors_id_fk": {
+					"name": "quotes_author_id_authors_id_fk",
+					"tableFrom": "quotes",
+					"tableTo": "authors",
+					"columnsFrom": ["author_id"],
+					"columnsTo": ["id"],
+					"onDelete": "no action",
+					"onUpdate": "no action"
+				}
+			},
+			"compositePrimaryKeys": {},
+			"uniqueConstraints": {}
+		}
+	},
+	"enums": {},
+	"schemas": {},
+	"_meta": {
+		"columns": {},
+		"schemas": {},
+		"tables": {}
+	}
+}

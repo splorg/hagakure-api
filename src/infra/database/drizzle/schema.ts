@@ -26,4 +26,12 @@ export const authors = pgTable(
 	},
 );
 
-export type Author = typeof authors;
+export const quotes = pgTable('quotes', {
+	id: uuid('id').primaryKey(),
+	text: text('text').notNull(),
+	authorId: uuid('author_id')
+		.references(() => authors.id)
+		.notNull(),
+	createdAt: timestamp('created_at', { mode: 'date' }).notNull().defaultNow(),
+	updatedAt: timestamp('updated_at', { mode: 'date' }).notNull().defaultNow(),
+});

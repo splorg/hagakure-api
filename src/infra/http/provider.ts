@@ -1,6 +1,9 @@
-import { CreateAuthorUseCase } from '@/core/application/CreateAuthorUseCase';
-import { GetAllAuthorsUseCase } from '@/core/application/GetAllAuthorsUseCase';
-import { database } from '@/infra/database';
+import { CreateAuthorUseCase } from '@/core/application/author/CreateAuthorUseCase';
+import { GetAllAuthorsUseCase } from '@/core/application/author/GetAllAuthorsUseCase';
+import { GetQuotesByAuthorUseCase } from '@/core/application/quote/GetQuotesByAuthorUseCase';
+import { authorDb, quoteDb } from '@/infra/database';
 
-export const createAuthor = new CreateAuthorUseCase(database);
-export const getAllAuthors = new GetAllAuthorsUseCase(database);
+export const createAuthor = new CreateAuthorUseCase(authorDb);
+export const getAllAuthors = new GetAllAuthorsUseCase(authorDb);
+
+export const getQuotesByAuthor = new GetQuotesByAuthorUseCase(quoteDb);
