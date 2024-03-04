@@ -1,6 +1,7 @@
 import { Author } from '@/core/domain/Author';
 import { IAuthorRepository } from '@/core/interfaces/IAuthorRepository';
 import { IUseCase } from '@/core/interfaces/IUseCase';
+import { InternalServerError } from '../../errors';
 
 export type CreateAuthorDTO = {
 	name: string;
@@ -27,7 +28,7 @@ export class CreateAuthorUseCase
 		const result = await this.repository.save(author);
 
 		if (!result) {
-			throw new Error('Could not save author.');
+			throw new InternalServerError('Could not save author.');
 		}
 
 		return author;

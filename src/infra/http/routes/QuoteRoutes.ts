@@ -22,8 +22,8 @@ export const QuoteRoutes = new Elysia({ prefix: '/quotes' }).get(
 	{
 		params: t.Object({
 			id: t.String({
-				format: 'uuid',
-				default: '00000000-00000000-00000000-00000000',
+				// format: 'uuid',
+				// default: '00000000-00000000-00000000-00000000',
 			}),
 		}),
 	},

@@ -1,4 +1,4 @@
-import { GetAllAuthorsUseCase } from '@/core/application/author/GetAllAuthorsUseCase';
+import { GetAllAuthorsUseCase } from '@/core/application/usecases/author/GetAllAuthorsUseCase';
 import { Author } from '@/core/domain/Author';
 import { HttpRequest } from '@/presentation/interfaces/HttpRequest';
 import { HttpResponse } from '@/presentation/interfaces/HttpResponse';

@@ -1,11 +1,12 @@
 {
-  "material-icon-theme.folders.associations": {
-    "core": "rules",
-    "application": "class",
-    "domain": "resource",
-    "presentation": "pipe",
-    "infra": "tools",
-    "database": "project",
-    "http": "public",
-  }
+	"material-icon-theme.folders.associations": {
+		"core": "rules",
+		"application": "class",
+		"domain": "resource",
+		"presentation": "pipe",
+		"infra": "tools",
+		"database": "project",
+		"http": "public",
+		"usecases": "api"
+	}
 }

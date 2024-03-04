@@ -1,7 +1,7 @@
 import {
 	CreateAuthorDTO,
 	CreateAuthorUseCase,
-} from '@/core/application/author/CreateAuthorUseCase';
+} from '@/core/application/usecases/author/CreateAuthorUseCase';
 import { Author } from '@/core/domain/Author';
 import { HttpRequest } from '@/presentation/interfaces/HttpRequest';
 import { HttpResponse } from '@/presentation/interfaces/HttpResponse';
