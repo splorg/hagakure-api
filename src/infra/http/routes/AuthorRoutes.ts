@@ -1,7 +1,12 @@
 import { DateType } from '@/infra/http/plugins/DateType';
-import { createAuthor, getAllAuthors } from '@/infra/http/provider';
+import {
+	createAuthor,
+	getAllAuthors,
+	getAuthorById,
+} from '@/infra/http/provider';
 import { CreateAuthorController } from '@/presentation/controllers/author/CreateAuthorController';
 import { GetAllAuthorsController } from '@/presentation/controllers/author/GetAllAuthorsController';
+import { GetAuthorByIdController } from '@/presentation/controllers/author/GetAuthorByIdController';
 import { Elysia, t } from 'elysia';
 
 export const AuthorRoutes = new Elysia({ prefix: '/authors' })
@@ -41,4 +46,17 @@ export const AuthorRoutes = new Elysia({ prefix: '/authors' })
 				dateOfDeath: t.Optional(DateType),
 			}),
 		},
-	);
+	)
+	.get('/:id', async ctx => {
+		const getByIdController = new GetAuthorByIdController(getAuthorById);
+
+		const response = await getByIdController.handle({
+			body: undefined,
+			params: ctx.params,
+			query: ctx.query,
+		});
+
+		ctx.set.status = response.statusCode;
+
+		return response.body;
+	});

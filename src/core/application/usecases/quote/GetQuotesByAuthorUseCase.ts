@@ -8,6 +8,6 @@ export class GetQuotesByAuthorUseCase implements IUseCase<string, Quote[]> {
 	async execute(authorId: string): Promise<Quote[]> {
 		const result = await this.repository.findByAuthor(authorId);
 
-		return result.map(q => new Quote(q.id, q.text, q.authorId));
+		return result.map(q => new Quote(q.text, q.authorId, q.id));
 	}
 }
